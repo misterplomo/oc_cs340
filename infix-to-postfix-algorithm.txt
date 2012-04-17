@@ -1,0 +1,32 @@
+Operand
+				Write to output
+
+
+Open Parenthesis
+				Push it to stack
+
+
+Close Parenthesis
+				While stack not empty
+					Pop item
+					if item is not (, write to output
+				Quit loop if item is (
+
+
+Operator (opThis)
+				If stack empty
+					Push opThis
+				Else
+					While stack not empty
+						Pop item
+						If item is (, push item, quit loop
+						Elif item is operator (opTop)
+							If opTop < opThis, push opTop
+							If opTop >= opThis, write opTop
+							Quit loop if opTop < opThis
+					Push opThis
+
+
+No more items
+				While stack not empty
+					Pop item, write item
